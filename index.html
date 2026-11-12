@@ -1,94 +1,235 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FORCE budget sources</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,600&display=swap">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raúl García-Valdés · Forest Ecology</title>
+<meta name="description" content="Raúl García-Valdés, Associate Professor at Universidad Rey Juan Carlos (IICG-URJC). Forest ecology, biogeography, functional traits and the stability and resilience of European forests under drought.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: single reading column, ledger-style tables grouped by budget heading */
+/* Layout: one 1040px column; full-width bands per section; sticky top nav */
 :root{
-  --bg:#f7f8f5; --surface:#ffffff; --fg:#1d2621; --muted:#5b6660; --line:#d9ded7; --accent:#2f6b4f; --accent-soft:#e3efe7;
+  --bg:#f6f7f3; --surface:#ffffff; --fg:#1b2420; --muted:#5a665f; --line:#d8ded6;
+  --accent:#2f6b4f; --accent-2:#a8612b; --accent-soft:#e2eee6;
   --f-display:"Fraunces", Georgia, serif; --f-body:"IBM Plex Sans", system-ui, sans-serif; --f-mono:"IBM Plex Mono", ui-monospace, monospace;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#131815;--surface:#1a211d;--fg:#e4ebe6;--muted:#9aa79f;--line:#2c3631;--accent:#7cc39d;--accent-soft:#1f3329;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#131815;--surface:#1a211d;--fg:#e4ebe6;--muted:#9aa79f;--line:#2c3631;--accent:#7cc39d;--accent-soft:#1f3329;color-scheme:dark}
-body{background:var(--bg);color:var(--fg);font:15px/1.55 var(--f-body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 56px}
-main{max-width:980px;margin:0 auto;display:grid;gap:28px}
-h1{font:600 clamp(26px,4vw,36px)/1.15 var(--f-display);margin:0;text-wrap:balance}
-h2{font:600 13px/1.3 var(--f-body);text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin:0 0 8px}
-p{margin:0;max-width:68ch}
-.lede{color:var(--muted)}
-.meta{display:flex;flex-wrap:wrap;gap:8px 18px;font:13px var(--f-mono);color:var(--muted)}
-.wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:8px}
-table{width:100%;border-collapse:collapse;font-size:14px;min-width:640px}
-th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
-th{font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);background:var(--accent-soft)}
-tr:last-child td{border-bottom:0}
-td.num{font:500 14px var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
-th.num{text-align:right}
-a{color:var(--accent);text-underline-offset:2px;word-break:break-word}
+@media (prefers-color-scheme: dark){:root{--bg:#121714;--surface:#19201c;--fg:#e3ebe6;--muted:#9aa89f;--line:#2b3530;--accent:#7cc39d;--accent-2:#e0a06d;--accent-soft:#1e3128;color-scheme:dark}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 var(--f-body)}
+a{color:var(--accent);text-underline-offset:2px}
 a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.note{color:var(--muted);font-size:13px}
-footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px;flex-wrap:wrap}
+nav .name{font:600 17px var(--f-display);color:var(--fg);text-decoration:none}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:4px 16px;flex-wrap:wrap;font-size:14px}
+nav ul a{color:var(--muted);text-decoration:none}
+nav ul a:hover{color:var(--accent)}
+header.hero .wrap{display:grid;grid-template-columns:200px 1fr;gap:36px;align-items:center;padding-block:48px 40px}
+.portrait{width:200px;aspect-ratio:4/5;border-radius:10px;background:var(--accent-soft);display:grid;place-items:center;overflow:hidden;border:1px solid var(--line)}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
+.portrait img + span{display:none}
+.portrait span{font:600 48px var(--f-display);color:var(--accent)}
+h1{font:600 clamp(32px,5vw,48px)/1.08 var(--f-display);margin:0 0 6px;text-wrap:balance}
+.role{font-size:17px;color:var(--muted);margin:0 0 16px}
+.thesis{font-size:18px;max-width:62ch;margin:0 0 18px}
+.ids{display:flex;flex-wrap:wrap;gap:8px}
+.ids a{font:500 13px var(--f-mono);padding:5px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--fg);background:var(--surface)}
+.ids a:hover{border-color:var(--accent);color:var(--accent)}
+section{padding-block:44px;border-top:1px solid var(--line)}
+h2{font:600 28px/1.2 var(--f-display);margin:0 0 6px}
+.kicker{font:500 12px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent-2);margin:0 0 6px}
+.lead{color:var(--muted);max-width:68ch;margin:0 0 24px}
+.lines{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.line{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px;display:grid;gap:8px;align-content:start}
+.line h3{font:600 18px/1.3 var(--f-display);margin:0}
+.line p{margin:0;font-size:15px}
+.line .refs{font:13px var(--f-mono);color:var(--muted)}
+figure{margin:24px 0 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px}
+figure img{width:100%;height:auto;display:block;border-radius:6px}
+figcaption{font-size:13.5px;color:var(--muted);margin-top:10px}
+.figs{display:grid;grid-template-columns:3fr 2fr;gap:20px;align-items:start}
+.pubs{list-style:none;margin:0;padding:0;display:grid;gap:14px;counter-reset:p}
+.pubs li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:12px;align-items:baseline}
+.pubs .yr{font:500 14px var(--f-mono);color:var(--accent-2);font-variant-numeric:tabular-nums}
+.pubs .au{font-size:14px;color:var(--muted)}
+.pubs .ti{font-weight:600}
+.pubs .jo{font-style:italic}
+.pubs .tag{font:500 11px var(--f-mono);text-transform:uppercase;letter-spacing:.05em;background:var(--accent-soft);color:var(--accent);padding:1px 6px;border-radius:4px;margin-left:6px;white-space:nowrap}
+.me{font-weight:600;color:var(--fg)}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.list{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.list li{border-left:2px solid var(--accent);padding-left:12px}
+.list .when{font:13px var(--f-mono);color:var(--muted)}
+.list .what{font-weight:600}
+.cv{display:grid;grid-template-columns:150px minmax(0,1fr);gap:8px 18px;font-size:15px}
+.cv dt{font:13px var(--f-mono);color:var(--muted);font-variant-numeric:tabular-nums;padding-top:2px}
+.cv dd{margin:0}
+.callout{background:var(--accent-soft);border-radius:10px;padding:18px 20px;display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;justify-content:space-between}
+.callout p{margin:0;max-width:64ch}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);text-decoration:none;font-weight:600;padding:9px 16px;border-radius:8px}
+footer{border-top:1px solid var(--line);padding-block:28px;color:var(--muted);font-size:14px}
+@media (max-width:820px){header.hero .wrap{grid-template-columns:1fr}.portrait{width:160px}.lines,.cols,.figs{grid-template-columns:1fr}.cv{grid-template-columns:1fr;gap:0 0}.cv dd{margin-bottom:10px}}
 </style>
-</head><body><main>
-<header style="display:grid;gap:10px">
-<h1>FORCE – sources of unit costs</h1>
-<p class="lede">Reference prices used to justify the budget of the FORCE proposal (Plan Estatal 2026, Proyectos de Generación de Conocimiento). All amounts include VAT and taxes. Travel and subsistence follow the maximum allowances of Royal Decree 462/2002 (Group 2) applied by Universidad Rey Juan Carlos.</p>
-<div class="meta"><span>Consulted: 12 Nov 2026</span><span>Travel dates of reference: May–June 2027</span><span>Currency: EUR (GBP × 1.17)</span></div>
-</header>
+</head>
+<body>
+<nav><div class="wrap">
+<a class="name" href="#top">Raúl García-Valdés</a>
+<ul>
+<li><a href="#research">Research</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#publications">Publications</a></li>
+<li><a href="#team">Team</a></li>
+<li><a href="#cv">CV</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div></nav>
 
-<section><h2>Official allowances – RD 462/2002, Group 2</h2>
-<div class="wrap"><table>
-<thead><tr><th>Country</th><th class="num">Subsistence €/day</th><th class="num">Accommodation max €/night</th><th>Source</th></tr></thead>
-<tbody>
-<tr><td>Spain</td><td class="num">37.40</td><td class="num">65.97</td><td rowspan="5"><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2002-10337">boe.es – RD 462/2002, Annexes II–III</a></td></tr>
-<tr><td>Denmark</td><td class="num">64.91</td><td class="num">122.61</td></tr>
-<tr><td>Finland</td><td class="num">65.51</td><td class="num">114.79</td></tr>
-<tr><td>United Kingdom</td><td class="num">82.94</td><td class="num">156.86</td></tr>
-<tr><td>France</td><td class="num">65.51</td><td class="num">122.61</td></tr>
-</tbody></table></div></section>
+<header class="hero" id="top"><div class="wrap">
+<div class="portrait"><img src="images/portrait.jpg" alt="Portrait of Raúl García-Valdés" onerror="this.remove()"><span aria-hidden="true">RGV</span></div>
+<div>
+<h1>Raúl García-Valdés</h1>
+<p class="role">Associate Professor (Profesor Titular) · Universidad Rey Juan Carlos · Global Change Research Institute (IICG-URJC), Madrid</p>
+<p class="thesis">I study how climate change alters the composition, diversity and functioning of forests. I combine national forest inventories, functional-trait databases and satellite time series with niche and process-based models, from regional to continental scales, to understand and predict the stability and resilience of European forests under increasing drought.</p>
+<div class="ids">
+<a href="https://orcid.org/0000-0001-6399-4709">ORCID 0000-0001-6399-4709</a>
+<a href="https://www.researchgate.net/profile/Raul_Garcia-Valdes">ResearchGate</a>
+<a href="https://www.webofscience.com/wos/author/record/W-4226-2017">ResearcherID W-4226-2017</a>
+<a href="https://www.scopus.com/authid/detail.uri?authorId=37090460300">Scopus 37090460300</a>
+<a href="https://iicg-urjc.es/en/about-us/">IICG-URJC</a>
+</div>
+</div>
+</div></header>
 
-<section><h2>Flights (return, economy, taxes included)</h2>
-<div class="wrap"><table>
-<thead><tr><th>Route</th><th>Used for</th><th class="num">Price €</th><th>Source</th></tr></thead>
-<tbody>
-<tr><td>Madrid – Billund (Aarhus)</td><td>Visit to Aarhus University; JCS to kick-off meeting</td><td class="num">406</td><td><a href="https://www.google.com/travel/flights?q=Flights%20from%20MAD%20to%20BLL%20on%202027-05-10%20through%202027-05-13%20one%20adult%20economy&hl=en&curr=EUR">Google Flights</a></td></tr>
-<tr><td>Madrid – Jyväskylä</td><td>Visit to University of Jyväskylä; MT to final meeting</td><td class="num">320</td><td><a href="https://www.google.com/travel/flights?q=Flights%20from%20MAD%20to%20JYV%20on%202027-05-10%20through%202027-05-13%20one%20adult%20economy&hl=en&curr=EUR">Google Flights</a></td></tr>
-<tr><td>Madrid – London</td><td>International conference (BES); PSM to final meeting</td><td class="num">146</td><td><a href="https://www.google.com/travel/flights?q=Flights%20from%20MAD%20to%20LON%20on%202027-05-10%20through%202027-05-14%20one%20adult%20economy&hl=en&curr=EUR">Google Flights</a></td></tr>
-<tr><td>Madrid – Montpellier</td><td>XM to kick-off meeting</td><td class="num">99</td><td><a href="https://www.google.com/travel/flights?q=Flights%20from%20MAD%20to%20MPL%20on%202027-05-10%20through%202027-05-14%20one%20adult%20economy&hl=en&curr=EUR">Google Flights</a></td></tr>
-<tr><td>Madrid – Barcelona</td><td>Reference for national travel (ReDeC, national conferences)</td><td class="num">90</td><td><a href="https://www.google.com/travel/flights?q=Flights%20from%20MAD%20to%20BCN%20on%202027-06-07%20through%202027-06-10%20one%20adult%20economy&hl=en&curr=EUR">Google Flights</a></td></tr>
-</tbody></table></div></section>
+<main>
+<section id="research"><div class="wrap">
+<p class="kicker">Research</p>
+<h2>Research lines</h2>
+<p class="lead">Why do some forests withstand drought and others decline? My work links what forests are made of (species, traits, structure) to how they function and respond to climate.</p>
+<div class="lines">
+<article class="line">
+<h3>Species composition and forest responses to climate change</h3>
+<p>Long-term climate-change impacts on forest productivity are driven mainly by species turnover rather than by changes in tree growth, and climate-driven extinctions affect forest functioning more than random extinctions.</p>
+<p class="refs">Glob Ecol Biogeogr 2020 · Divers Distrib 2018 · Sci Rep 2018</p>
+</article>
+<article class="line">
+<h3>Functional diversity, stability and resilience</h3>
+<p>Diversity in drought-tolerance and hydraulic traits compensates the productivity cost of drought-tolerant communities and increases the temporal stability of forests across thousands of inventory plots.</p>
+<p class="refs">Glob Change Biol 2021 · For Ecol Manage 2025 · Eur J For Res 2026</p>
+</article>
+<article class="line">
+<h3>Trait-based prediction of drought impacts</h3>
+<p>International syntheses on hydraulic risk, drought-induced mortality and range shifts, and forest dynamics models (MEDFATE) used for scenario simulation.</p>
+<p class="refs">Nat Ecol Evol 2023, 2025 · New Phytol 2023 · Geosci Model Dev 2023</p>
+</article>
+</div>
+<div class="figs">
+<figure><img src="images/force-workflow.jpg" alt="Workflow of the FORCE project: European forest datasets, drought resistance, recovery and resilience, and projections and management around 2050" loading="lazy" onerror="this.closest('figure').remove()"><figcaption>Workflow of FORCE: from harmonised European inventories, traits and Landsat time series to drought resistance, recovery, thresholds and management scenarios around 2050.</figcaption></figure>
+<figure><img src="images/stability-sensitivity.jpg" alt="Maps of the sensitivity of forest canopy stability to functional diversity, maximum tree size and leaf nitrogen across Europe" loading="lazy" onerror="this.closest('figure').remove()"><figcaption>DivTraitFor preliminary results: sensitivity of canopy stability (MODIS EVI) to functional diversity, maximum tree size and leaf nitrogen across twelve European countries.</figcaption></figure>
+</div>
+</div></section>
 
-<section><h2>Accommodation (per night, taxes included)</h2>
-<div class="wrap"><table>
-<thead><tr><th>City</th><th>Reference hotel</th><th class="num">Price €</th><th>Source</th></tr></thead>
-<tbody>
-<tr><td>Aarhus</td><td>Hotel Atlantic (breakfast incl.); charged at the 122.61 € maximum</td><td class="num">123</td><td><a href="https://www.google.com/travel/search?q=hotels%20in%20Aarhus&hl=en&curr=EUR">Google Hotels</a></td></tr>
-<tr><td>Jyväskylä</td><td>Scandic Jyväskylä City</td><td class="num">110</td><td><a href="https://www.google.com/travel/search?q=hotels%20in%20Jyvaskyla&hl=en&curr=EUR">Google Hotels</a></td></tr>
-<tr><td>London</td><td>Hotel Riu Plaza London The Westminster</td><td class="num">147</td><td><a href="https://www.google.com/travel/search?q=hotels%20in%20London&hl=en&curr=EUR">Google Hotels</a></td></tr>
-<tr><td>Montpellier</td><td>Best Western Plus Comédie Saint Roch (breakfast incl.)</td><td class="num">78</td><td><a href="https://www.google.com/travel/search?q=hotels%20in%20Montpellier%20centre&hl=en&curr=EUR">Google Hotels</a></td></tr>
-<tr><td>Madrid / Móstoles</td><td>External participants at project meetings</td><td class="num">65.97</td><td><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2002-10337">RD 462/2002 maximum</a></td></tr>
-</tbody></table></div></section>
+<section id="projects"><div class="wrap">
+<p class="kicker">Projects</p>
+<h2>Current and recent projects</h2>
+<div class="cols">
+<ul class="list">
+<li><div class="when">2024–2026 · Principal Investigator</div><div class="what">DivTraitFor – Effects of diversity of tree traits on forest stability and resilience</div><div>Comunidad de Madrid (2024REGING-20327). European database of &gt;400,000 forest inventory plots from twelve countries, linked to functional traits and satellite time series.</div></li>
+<li><div class="when">2027–2030 · Proposal (PI, with J. López-Angulo)</div><div class="what">FORCE – European forest resilience to recurrent drought</div><div>Plan Estatal 2026. Drivers, thresholds and future projections of forest drought resilience, and management options. <a href="force-budget/">Budget sources</a></div></li>
+<li><div class="when">2026–2027 · Co-PI</div><div class="what">Methodologies for the assessment of rocky ecosystems</div><div>TRAGSATEC – URJC and Universidad de Granada (Art. 60 contract).</div></li>
+<li><div class="when">2025 · Principal Investigator</div><div class="what">Forest growth in Spain for validating species distribution models</div><div>Fundación para la Investigación del Clima (FICLIMA), Art. 60 contract.</div></li>
+</ul>
+<ul class="list">
+<li><div class="when">2022–2026 · Team member</div><div class="what">TRACES – Trait coordination and evolutionary history to predict plant performance under stress</div><div>AEI PID2021-127452NB-I00. PI: J. Martínez-Vilalta (CREAF).</div></li>
+<li><div class="when">2022–2024 · Team member</div><div class="what">BOMFORES – Process-based models of forest dynamics and ecosystem services</div><div>AEI PID2021-126679OB-I00. PI: M. De Cáceres (CREAF).</div></li>
+<li><div class="when">2018–2021 · Team member</div><div class="what">DRESS – Plant water use and drought resistance strategies across scales</div><div>MINECO CGL2017-89149-C2-1-R. PIs: J. Martínez-Vilalta &amp; M. Mencuccini (CREAF).</div></li>
+<li><div class="when">2013–2015 · Postdoctoral researcher</div><div class="what">EC21C – European Conservation for the 21st Century</div><div>BiodivERsA. PIs: R. Early &amp; X. Morin (CEFE-CNRS).</div></li>
+</ul>
+</div>
+</div></section>
 
-<section><h2>Conference registration</h2>
-<div class="wrap"><table>
-<thead><tr><th>Conference</th><th>Rate</th><th class="num">Fee</th><th>Source</th></tr></thead>
-<tbody>
-<tr><td>BES Annual Meeting 2026 (UK)</td><td>Member, earlybird (PIs)</td><td class="num">£410 ≈ €479.70</td><td rowspan="2"><a href="https://www.britishecologicalsociety.org/content/bes-annual-meeting-2026/registration/">britishecologicalsociety.org</a></td></tr>
-<tr><td></td><td>Concession member, earlybird (PhD)</td><td class="num">£195 ≈ €228.15</td></tr>
-<tr><td>EGU General Assembly 2026 (Vienna)</td><td>Member, early (alternative); 20% VAT incl.</td><td class="num">€525</td><td><a href="https://www.egu26.eu/attendance/registration.html">egu26.eu</a></td></tr>
-<tr><td>III SIBECOL &amp; XVII AEET 2025 (Spain)</td><td>Member, early (PIs)</td><td class="num">€350</td><td rowspan="2"><a href="https://sibecol-aeet-meeting2025.org/Index/41/Registration">sibecol-aeet-meeting2025.org</a></td></tr>
-<tr><td></td><td>Student member, early (PhD)</td><td class="num">€225</td></tr>
-</tbody></table></div></section>
+<section id="publications"><div class="wrap">
+<p class="kicker">Publications</p>
+<h2>Selected publications</h2>
+<p class="lead">Full list on <a href="https://orcid.org/0000-0001-6399-4709">ORCID</a>. Google Scholar (Nov 2026): 2,441 citations, h-index 21.</p>
+<ol class="pubs">
+<li><span class="yr">2026</span><div><div class="au">Vauthier R, Martínez-Vilalta J, Poyatos R, Valade A, <span class="me">García-Valdés R</span></div><div><a class="ti" href="https://doi.org/10.1007/s10342-026-01933-2">Water availability and functional trait diversity drive temporal stability in temperate and Mediterranean forests</a>. <span class="jo">European Journal of Forest Research</span> 145: 90.</div></div></li>
+<li><span class="yr">2025</span><div><div class="au">Roces-Díaz JV, <span class="me">García-Valdés R</span> (joint first), De Cáceres M, et al., Martínez-Vilalta J</div><div><a class="ti" href="https://doi.org/10.1016/j.foreco.2025.122946">Water availability, stand structure, and hydraulic trait diversity drive forest stability</a>. <span class="jo">Forest Ecology and Management</span> 594: 122946.<span class="tag">First author</span></div></div></li>
+<li><span class="yr">2025</span><div><div class="au">Ramírez-Valiente JA, Poyatos R, Blackman CJ, …, <span class="me">García-Valdés R</span>, …, Mencuccini M</div><div><a class="ti" href="https://doi.org/10.1038/s41559-025-02830-4">Limited plastic responses in safety traits support greater hydraulic risk under drier conditions</a>. <span class="jo">Nature Ecology &amp; Evolution</span> 9: 1825–1836.</div></div></li>
+<li><span class="yr">2025</span><div><div class="au">Tijerín-Triviño J, Serra-Maluquer X, <span class="me">García-Valdés R</span>, …, Ruiz-Benito P</div><div><a class="ti" href="https://doi.org/10.1111/gcb.70369">Hydraulic strategies modulate forest productivity responses to hotter droughts</a>. <span class="jo">Global Change Biology</span> 31: e70369.</div></div></li>
+<li><span class="yr">2025</span><div><div class="au">Li X, Silvestro R, Liang E, …, <span class="me">García-Valdés R</span>, …, Rossi S</div><div><a class="ti" href="https://doi.org/10.1038/s41558-025-02474-z">Warming increases the phenological mismatch between carbon sources and sinks in conifers</a>. <span class="jo">Nature Climate Change</span> 15: 1363–1370.</div></div></li>
+<li><span class="yr">2025</span><div><div class="au">Morin X, Toigo M, Fahse L, …, <span class="me">García-Valdés R</span>, …, Vallet P</div><div><a class="ti" href="https://doi.org/10.1111/1365-2745.14460">More species, more trees: the role of tree packing in promoting forest productivity</a>. <span class="jo">Journal of Ecology</span> 113: 371–386.</div></div></li>
+<li><span class="yr">2024</span><div><div class="au">Silvestro R, Mencuccini M, <span class="me">García-Valdés R</span>, …, Rossi S</div><div><a class="ti" href="https://doi.org/10.1038/s41467-024-49494-5">Partial asynchrony of coniferous forest carbon sources and sinks at the intra-annual time scale</a>. <span class="jo">Nature Communications</span> 15: 6169.</div></div></li>
+<li><span class="yr">2023</span><div><div class="au">Martínez-Vilalta J, <span class="me">García-Valdés R</span>, Jump A, Vilà-Cabrera A, Mencuccini M</div><div><a class="ti" href="https://doi.org/10.1111/nph.19138">Accounting for trait variability and coordination in predictions of drought-induced range shifts in woody plants</a>. <span class="jo">New Phytologist</span> 240: 23–40.</div></div></li>
+<li><span class="yr">2023</span><div><div class="au">Sanchez-Martinez P, Mencuccini M, <span class="me">García-Valdés R</span>, …, Martínez-Vilalta J</div><div><a class="ti" href="https://doi.org/10.1038/s41559-023-02180-z">Increased hydraulic risk in assemblages of woody plant species predicts spatial patterns of drought-induced mortality</a>. <span class="jo">Nature Ecology &amp; Evolution</span> 7: 1620–1632.</div></div></li>
+<li><span class="yr">2023</span><div><div class="au">De Cáceres M, Molowny-Horas R, Cabon A, …, <span class="me">García-Valdés R</span>, …, Améztegui A</div><div><a class="ti" href="https://doi.org/10.5194/gmd-16-3165-2023">MEDFATE 2.9.3: a trait-enabled model to simulate Mediterranean forest function and dynamics at regional scales</a>. <span class="jo">Geoscientific Model Development</span> 16: 3165–3201.</div></div></li>
+<li><span class="yr">2023</span><div><div class="au">Zheng T, Martínez-Vilalta J, <span class="me">García-Valdés R</span>, Gazol A, Camarero JJ, Mu C, Mencuccini M</div><div><a class="ti" href="https://doi.org/10.1016/j.fecs.2023.100107">Growth plasticity of conifers did not avoid declining resilience to soil and atmospheric droughts during the 20th century</a>. <span class="jo">Forest Ecosystems</span> 10: 100107.</div></div></li>
+<li><span class="yr">2022</span><div><div class="au">Trasobares A, Mola-Yudego B, Aquilué N, González-Olabarria JR, Garcia-Gonzalo J, <span class="me">García-Valdés R</span>, De Cáceres M</div><div><a class="ti" href="https://doi.org/10.1016/j.foreco.2021.119909">Nationwide climate-sensitive models for stand dynamics and forest scenario simulation</a>. <span class="jo">Forest Ecology and Management</span> 505: 119909.</div></div></li>
+<li><span class="yr">2021</span><div><div class="au"><span class="me">García-Valdés R</span>, Vayreda J, Retana J, Martínez-Vilalta J</div><div><a class="ti" href="https://doi.org/10.1111/gcb.15529">Low forest productivity associated with increasing drought-tolerant species is compensated by an increase in drought-tolerance richness</a>. <span class="jo">Global Change Biology</span> 27: 2113–2127.<span class="tag">First author</span></div></div></li>
+<li><span class="yr">2020</span><div><div class="au"><span class="me">García-Valdés R</span>, Estrada A, Early R, Lehsten V, Morin X</div><div><a class="ti" href="https://doi.org/10.1111/geb.13112">Climate change impacts on long-term forest productivity might be driven by species turnover rather than by changes in tree growth</a>. <span class="jo">Global Ecology and Biogeography</span> 29: 1360–1372.<span class="tag">First author</span></div></div></li>
+<li><span class="yr">2018</span><div><div class="au"><span class="me">García-Valdés R</span>, Bugmann H, Morin X</div><div><a class="ti" href="https://doi.org/10.1111/ddi.12744">Climate change-driven extinctions of tree species affect forest functioning more than random extinctions</a>. <span class="jo">Diversity and Distributions</span> 24: 906–918.<span class="tag">First author</span></div></div></li>
+<li><span class="yr">2018</span><div><div class="au">Morin X, Fahse L, Jactel H, Scherer-Lorenzen M, <span class="me">García-Valdés R</span>, Bugmann H</div><div><span class="ti">Long-term response of forest productivity to climate change is mostly driven by change in tree species composition</span>. <span class="jo">Scientific Reports</span> 8: 5627.</div></div></li>
+<li><span class="yr">2017</span><div><div class="au">Swenson NG, Weiser MD, Mao L, …, <span class="me">García-Valdés R</span>, …, Svenning JC</div><div><a class="ti" href="https://doi.org/10.1111/geb.12559">Phylogeny and the prediction of tree functional diversity across novel continental settings</a>. <span class="jo">Global Ecology and Biogeography</span> 26: 553–562.</div></div></li>
+<li><span class="yr">2015</span><div><div class="au"><span class="me">García-Valdés R</span>, Svenning JC, Zavala MA, Purves DW, Araújo MB</div><div><a class="ti" href="https://doi.org/10.1111/1365-2664.12453">Evaluating the combined effects of climate and land-use change on tree species distributions</a>. <span class="jo">Journal of Applied Ecology</span> 52: 902–912.<span class="tag">First author</span></div></div></li>
+<li><span class="yr">2015</span><div><div class="au"><span class="me">García-Valdés R</span>, Gotelli NJ, Zavala MA, Purves DW, Araújo MB</div><div><a class="ti" href="https://doi.org/10.1016/j.ecolmodel.2015.04.003">Effects of climate, species interactions, and dispersal on decadal colonization and extinction rates of Iberian tree species</a>. <span class="jo">Ecological Modelling</span> 309: 118–127.<span class="tag">First author</span></div></div></li>
+<li><span class="yr">2014</span><div><div class="au">Varela S, Anderson RP, <span class="me">García-Valdés R</span>, Fernández-González F</div><div><a class="ti" href="https://doi.org/10.1111/j.1600-0587.2013.00441.x">Environmental filters reduce the effects of sampling bias and improve predictions of ecological niche models</a>. <span class="jo">Ecography</span> 37: 1084–1091.</div></div></li>
+<li><span class="yr">2013</span><div><div class="au"><span class="me">García-Valdés R</span>, Zavala MA, Araújo MB, Purves DW</div><div><a class="ti" href="https://doi.org/10.1111/1365-2745.12049">Chasing a moving target: projecting climate change-induced shifts in non-equilibrial tree species distributions</a>. <span class="jo">Journal of Ecology</span> 101: 441–453.<span class="tag">First author</span></div></div></li>
+<li><span class="yr">2011</span><div><div class="au">Gómez-Aparicio L, <span class="me">García-Valdés R</span>, Ruiz-Benito P, Zavala MA</div><div><a class="ti" href="https://doi.org/10.1111/j.1365-2486.2011.02421.x">Disentangling the relative importance of climate, size and competition on tree growth in Iberian forests: implications for forest management under global change</a>. <span class="jo">Global Change Biology</span> 17: 2400–2414.</div></div></li>
+</ol>
+</div></section>
 
-<section><h2>Equipment, computing and publication</h2>
-<div class="wrap"><table>
-<thead><tr><th>Item</th><th>Detail</th><th class="num">Price</th><th>Source</th></tr></thead>
-<tbody>
-<tr><td>Laptop (×2)</td><td>HP OmniBook 5 14", Intel Core Ultra 7 355, 32 GB RAM, 1 TB SSD; VAT incl.</td><td class="num">€1,598</td><td><a href="https://www.mediamarkt.es/es/product/_portatil-hp-omnibook-5-next-gen-ai-14-hh0008ns-copilot-pc-14-2k-oled-intelr-coretm-ultra-7-355-49-tops-32gb-ram-1tb-ssd-w11h-sin-cargador-1625250.html">MediaMarkt</a></td></tr>
-<tr><td>Cluster computing</td><td>URJC CAT, 64-CPU/124 GB node, URJC rate</td><td class="num">€0.64 / 10 h</td><td><a href="https://www.urjc.es/images/cat/tarifas/Tarifas_CAT_de_Presupuestos_2024.pdf">URJC CAT tariffs (PDF)</a></td></tr>
-<tr><td>Open-access publication</td><td>Average article publication charge in target journals</td><td class="num">€2,300</td><td><a href="https://authors.wiley.com/open-access/article-publication-charges.html">Wiley APC price list</a></td></tr>
-</tbody></table></div></section>
+<section id="team"><div class="wrap">
+<p class="kicker">Team</p>
+<h2>Students and collaborators</h2>
+<div class="cols">
+<ul class="list">
+<li><div class="when">PhD, URJC · ongoing</div><div class="what">Stela Vlajos-Gómez</div><div>Functional dynamics of cliff plant communities and their resilience to global change. Co-supervised with M. March-Salas and J. Lorite.</div></li>
+<li><div class="when">PhD, Universidad de Alcalá · ongoing</div><div class="what">Gao Fei</div><div>Macroecological forecasting of crop-pest phenology. Co-supervised with I. Morales-Castilla.</div></li>
+<li><div class="when">MSc and BSc theses</div><div class="what">Supervised theses at UAB, Universidad de Alcalá, URJC and Aix-Marseille Université</div><div>One MSc thesis led to a paper with the student as first author (Eur J For Res 2026).</div></li>
+</ul>
+<ul class="list">
+<li><div class="when">Collaborating groups</div><div class="what">CREAF (Barcelona), CEFE-CNRS (Montpellier), Aarhus University, University of Jyväskylä, ETH Zurich, Université du Québec à Chicoutimi</div></li>
+<li><div class="when">Networks</div><div class="what">DivTraitFor network · International Tree Mortality Network · Spanish Network on Climate-Induced Forest Decline (ReDeC)</div></li>
+<li><div class="when">Open positions</div><div class="what">MSc thesis 2026-27: what makes some forests more resilient to drought?</div><div>Inventory plots and satellite time series in Spanish forests. Contact me if interested.</div></li>
+</ul>
+</div>
+</div></section>
 
-<footer><p>Flight and hotel prices change daily; the figures above are those observed on the consultation date. Membership fees are not charged to the project. Local transport and the remaining items (technician salary, Polish NFI data access, workshop and courses) are estimates detailed in the budget justification.</p></footer>
+<section id="cv"><div class="wrap">
+<p class="kicker">CV</p>
+<h2>Positions and education</h2>
+<dl class="cv">
+<dt>2025–present</dt><dd>Associate Professor (Profesor Titular de Universidad), Universidad Rey Juan Carlos</dd>
+<dt>2022–2025</dt><dd>Assistant Professor and Permanent Lecturer, Universidad Rey Juan Carlos</dd>
+<dt>2020–2021</dt><dd>Postdoctoral researcher, Forest Science and Technology Centre of Catalonia (CTFC)</dd>
+<dt>2015–2020</dt><dd>Postdoctoral researcher, CREAF – Universitat Autònoma de Barcelona (incl. José Castillejo stay at Aarhus University, 2019–2020)</dd>
+<dt>2014–2015</dt><dd>Postdoctoral researcher, CEFE-CNRS, Montpellier (France)</dd>
+<dt>2013</dt><dd>PhD in Global Change and Sustainable Development, Universidad de Alcalá (European Doctorate, Cum Laude)</dd>
+<dt>2005</dt><dd>Licenciatura in Environmental Sciences, Universidad de Alcalá</dd>
+</dl>
+</div></section>
+
+<section id="outreach"><div class="wrap">
+<p class="kicker">Outreach</p>
+<h2>In the media and with the public</h2>
+<p class="lead">Our study on forest stability (For Ecol Manage 2025) was covered by La Vanguardia, Europa Press, El Periódico, eldiario.es, El Economista and The Objective. Interviews in El País and El Periódico; art–science exhibition at CCCB and workshops at CosmoCaixa (Barcelona, 2018).</p>
+<div class="callout">
+<p><strong>FORCE budget sources.</strong> Reference prices and sources used to justify the budget of the FORCE proposal (Plan Estatal 2026).</p>
+<a class="btn" href="force-budget/">Open page</a>
+</div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+<p class="kicker">Contact</p>
+<h2>Get in touch</h2>
+<p>Global Change Research Institute (IICG-URJC) · Universidad Rey Juan Carlos · C/ Tulipán s/n, 28933 Móstoles, Madrid, Spain</p>
+<p>Email: <span class="me">raul.garcia.valdes@urjc.es</span></p>
+</div></section>
 </main>
-</body></html>
+
+<footer><div class="wrap">© Raúl García-Valdés · Last updated November 2026</div></footer>
+</body>
+</html>
