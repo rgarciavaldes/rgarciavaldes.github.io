@@ -1,0 +1,94 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FORCE budget sources</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,600&display=swap">
+<style>
+/* Layout: single reading column, ledger-style tables grouped by budget heading */
+:root{
+  --bg:#f7f8f5; --surface:#ffffff; --fg:#1d2621; --muted:#5b6660; --line:#d9ded7; --accent:#2f6b4f; --accent-soft:#e3efe7;
+  --f-display:"Fraunces", Georgia, serif; --f-body:"IBM Plex Sans", system-ui, sans-serif; --f-mono:"IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#131815;--surface:#1a211d;--fg:#e4ebe6;--muted:#9aa79f;--line:#2c3631;--accent:#7cc39d;--accent-soft:#1f3329;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#131815;--surface:#1a211d;--fg:#e4ebe6;--muted:#9aa79f;--line:#2c3631;--accent:#7cc39d;--accent-soft:#1f3329;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.55 var(--f-body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 56px}
+main{max-width:980px;margin:0 auto;display:grid;gap:28px}
+h1{font:600 clamp(26px,4vw,36px)/1.15 var(--f-display);margin:0;text-wrap:balance}
+h2{font:600 13px/1.3 var(--f-body);text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin:0 0 8px}
+p{margin:0;max-width:68ch}
+.lede{color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;font:13px var(--f-mono);color:var(--muted)}
+.wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:8px}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:640px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);background:var(--accent-soft)}
+tr:last-child td{border-bottom:0}
+td.num{font:500 14px var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+th.num{text-align:right}
+a{color:var(--accent);text-underline-offset:2px;word-break:break-word}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.note{color:var(--muted);font-size:13px}
+footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+</style>
+</head><body><main>
+<header style="display:grid;gap:10px">
+<h1>FORCE – sources of unit costs</h1>
+<p class="lede">Reference prices used to justify the budget of the FORCE proposal (Plan Estatal 2026, Proyectos de Generación de Conocimiento). All amounts include VAT and taxes. Travel and subsistence follow the maximum allowances of Royal Decree 462/2002 (Group 2) applied by Universidad Rey Juan Carlos.</p>
+<div class="meta"><span>Consulted: 12 Nov 2026</span><span>Travel dates of reference: May–June 2027</span><span>Currency: EUR (GBP × 1.17)</span></div>
+</header>
+
+<section><h2>Official allowances – RD 462/2002, Group 2</h2>
+<div class="wrap"><table>
+<thead><tr><th>Country</th><th class="num">Subsistence €/day</th><th class="num">Accommodation max €/night</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>Spain</td><td class="num">37.40</td><td class="num">65.97</td><td rowspan="5"><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2002-10337">boe.es – RD 462/2002, Annexes II–III</a></td></tr>
+<tr><td>Denmark</td><td class="num">64.91</td><td class="num">122.61</td></tr>
+<tr><td>Finland</td><td class="num">65.51</td><td class="num">114.79</td></tr>
+<tr><td>United Kingdom</td><td class="num">82.94</td><td class="num">156.86</td></tr>
+<tr><td>France</td><td class="num">65.51</td><td class="num">122.61</td></tr>
+</tbody></table></div></section>
+
+<section><h2>Flights (return, economy, taxes included)</h2>
+<div class="wrap"><table>
+<thead><tr><th>Route</th><th>Used for</th><th class="num">Price €</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>Madrid – Billund (Aarhus)</td><td>Visit to Aarhus University; JCS to kick-off meeting</td><td class="num">406</td><td><a href="https://www.google.com/travel/flights?q=Flights%20from%20MAD%20to%20BLL%20on%202027-05-10%20through%202027-05-13%20one%20adult%20economy&hl=en&curr=EUR">Google Flights</a></td></tr>
+<tr><td>Madrid – Jyväskylä</td><td>Visit to University of Jyväskylä; MT to final meeting</td><td class="num">320</td><td><a href="https://www.google.com/travel/flights?q=Flights%20from%20MAD%20to%20JYV%20on%202027-05-10%20through%202027-05-13%20one%20adult%20economy&hl=en&curr=EUR">Google Flights</a></td></tr>
+<tr><td>Madrid – London</td><td>International conference (BES); PSM to final meeting</td><td class="num">146</td><td><a href="https://www.google.com/travel/flights?q=Flights%20from%20MAD%20to%20LON%20on%202027-05-10%20through%202027-05-14%20one%20adult%20economy&hl=en&curr=EUR">Google Flights</a></td></tr>
+<tr><td>Madrid – Montpellier</td><td>XM to kick-off meeting</td><td class="num">99</td><td><a href="https://www.google.com/travel/flights?q=Flights%20from%20MAD%20to%20MPL%20on%202027-05-10%20through%202027-05-14%20one%20adult%20economy&hl=en&curr=EUR">Google Flights</a></td></tr>
+<tr><td>Madrid – Barcelona</td><td>Reference for national travel (ReDeC, national conferences)</td><td class="num">90</td><td><a href="https://www.google.com/travel/flights?q=Flights%20from%20MAD%20to%20BCN%20on%202027-06-07%20through%202027-06-10%20one%20adult%20economy&hl=en&curr=EUR">Google Flights</a></td></tr>
+</tbody></table></div></section>
+
+<section><h2>Accommodation (per night, taxes included)</h2>
+<div class="wrap"><table>
+<thead><tr><th>City</th><th>Reference hotel</th><th class="num">Price €</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>Aarhus</td><td>Hotel Atlantic (breakfast incl.); charged at the 122.61 € maximum</td><td class="num">123</td><td><a href="https://www.google.com/travel/search?q=hotels%20in%20Aarhus&hl=en&curr=EUR">Google Hotels</a></td></tr>
+<tr><td>Jyväskylä</td><td>Scandic Jyväskylä City</td><td class="num">110</td><td><a href="https://www.google.com/travel/search?q=hotels%20in%20Jyvaskyla&hl=en&curr=EUR">Google Hotels</a></td></tr>
+<tr><td>London</td><td>Hotel Riu Plaza London The Westminster</td><td class="num">147</td><td><a href="https://www.google.com/travel/search?q=hotels%20in%20London&hl=en&curr=EUR">Google Hotels</a></td></tr>
+<tr><td>Montpellier</td><td>Best Western Plus Comédie Saint Roch (breakfast incl.)</td><td class="num">78</td><td><a href="https://www.google.com/travel/search?q=hotels%20in%20Montpellier%20centre&hl=en&curr=EUR">Google Hotels</a></td></tr>
+<tr><td>Madrid / Móstoles</td><td>External participants at project meetings</td><td class="num">65.97</td><td><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2002-10337">RD 462/2002 maximum</a></td></tr>
+</tbody></table></div></section>
+
+<section><h2>Conference registration</h2>
+<div class="wrap"><table>
+<thead><tr><th>Conference</th><th>Rate</th><th class="num">Fee</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>BES Annual Meeting 2026 (UK)</td><td>Member, earlybird (PIs)</td><td class="num">£410 ≈ €479.70</td><td rowspan="2"><a href="https://www.britishecologicalsociety.org/content/bes-annual-meeting-2026/registration/">britishecologicalsociety.org</a></td></tr>
+<tr><td></td><td>Concession member, earlybird (PhD)</td><td class="num">£195 ≈ €228.15</td></tr>
+<tr><td>EGU General Assembly 2026 (Vienna)</td><td>Member, early (alternative); 20% VAT incl.</td><td class="num">€525</td><td><a href="https://www.egu26.eu/attendance/registration.html">egu26.eu</a></td></tr>
+<tr><td>III SIBECOL &amp; XVII AEET 2025 (Spain)</td><td>Member, early (PIs)</td><td class="num">€350</td><td rowspan="2"><a href="https://sibecol-aeet-meeting2025.org/Index/41/Registration">sibecol-aeet-meeting2025.org</a></td></tr>
+<tr><td></td><td>Student member, early (PhD)</td><td class="num">€225</td></tr>
+</tbody></table></div></section>
+
+<section><h2>Equipment, computing and publication</h2>
+<div class="wrap"><table>
+<thead><tr><th>Item</th><th>Detail</th><th class="num">Price</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>Laptop (×2)</td><td>HP OmniBook 5 14", Intel Core Ultra 7 355, 32 GB RAM, 1 TB SSD; VAT incl.</td><td class="num">€1,598</td><td><a href="https://www.mediamarkt.es/es/product/_portatil-hp-omnibook-5-next-gen-ai-14-hh0008ns-copilot-pc-14-2k-oled-intelr-coretm-ultra-7-355-49-tops-32gb-ram-1tb-ssd-w11h-sin-cargador-1625250.html">MediaMarkt</a></td></tr>
+<tr><td>Cluster computing</td><td>URJC CAT, 64-CPU/124 GB node, URJC rate</td><td class="num">€0.64 / 10 h</td><td><a href="https://www.urjc.es/images/cat/tarifas/Tarifas_CAT_de_Presupuestos_2024.pdf">URJC CAT tariffs (PDF)</a></td></tr>
+<tr><td>Open-access publication</td><td>Average article publication charge in target journals</td><td class="num">€2,300</td><td><a href="https://authors.wiley.com/open-access/article-publication-charges.html">Wiley APC price list</a></td></tr>
+</tbody></table></div></section>
+
+<footer><p>Flight and hotel prices change daily; the figures above are those observed on the consultation date. Membership fees are not charged to the project. Local transport and the remaining items (technician salary, Polish NFI data access, workshop and courses) are estimates detailed in the budget justification.</p></footer>
+</main>
+</body></html>
