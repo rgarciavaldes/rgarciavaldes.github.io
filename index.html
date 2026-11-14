@@ -66,6 +66,8 @@ figcaption{font-size:13.5px;color:var(--muted);margin-top:10px}
 .list li{border-left:2px solid var(--accent);padding-left:12px}
 .list .when{font:13px var(--f-mono);color:var(--muted)}
 .list .what{font-weight:600}
+.avatar{width:64px;height:64px;border-radius:50%;object-fit:cover;float:left;margin:2px 12px 6px 0}
+.list li::after{content:"";display:block;clear:both}
 .cv{display:grid;grid-template-columns:150px minmax(0,1fr);gap:8px 18px;font-size:15px}
 .cv dt{font:13px var(--f-mono);color:var(--muted);font-variant-numeric:tabular-nums;padding-top:2px}
 .cv dd{margin:0}
@@ -201,8 +203,8 @@ footer{border-top:1px solid var(--line);padding-block:28px;color:var(--muted);fo
 <h2>Team</h2>
 <div class="cols">
 <ul class="list">
-<li><div class="when">Postdoctoral researcher, URJC · 2025–present</div><div class="what"><a href="https://orcid.org/0000-0001-9284-7900">Sophia Ratcliffe</a></div><div>Hired on the DivTraitFor project. Effects of tree trait diversity on the stability and resilience of European forests.</div></li>
-<li><div class="when">PhD candidate, URJC · ongoing</div><div class="what"><a href="https://orcid.org/0009-0003-9011-1125">Stela Vlajos-Gómez</a></div><div>Functional dynamics of cliff plant communities and their resilience to global change. Co-supervised with M. March-Salas and J. Lorite.</div></li>
+<li><img class="avatar" src="images/sophia-ratcliffe.jpg" alt="Sophia Ratcliffe" loading="lazy"><div class="when">Postdoctoral researcher, URJC · 2025–present</div><div class="what"><a href="https://orcid.org/0000-0001-9284-7900">Sophia Ratcliffe</a></div><div>Hired on the DivTraitFor project. Effects of tree trait diversity on the stability and resilience of European forests.</div></li>
+<li><div class="when">PhD candidate, URJC · ongoing</div><div class="what"><a href="https://iicg-urjc.es/equipo/stela-vlajos-gomez/">Stela Vlajos-Gómez</a></div><div>Functional dynamics of cliff plant communities and their resilience to global change. Co-supervised with M. March-Salas and J. Lorite.</div></li>
 <li><div class="when">PhD candidate, Universidad de Alcalá · ongoing</div><div class="what">Gao Fei</div><div>Macroecological forecasting of crop-pest phenology. Co-supervised with I. Morales-Castilla.</div></li>
 <li><div class="when">MSc and BSc theses</div><div class="what">Supervised theses at UAB, Universidad de Alcalá, URJC and Aix-Marseille Université</div><div>One MSc thesis led to a first-author paper (Eur J For Res 2026).</div></li>
 </ul>
